@@ -1,0 +1,47 @@
+<div class="w-100 background p-5">
+    <div class="mb-5">
+        <button type="button" class="btn btn-light background-color-content content-font--size" routerLink="/films"><i class="fa-solid fa-arrow-left fa-lg fa-2x mr-2"></i> View all movies</button>
+    </div>
+    <div class="content background-color-content p-4 content-font--size w-75">
+
+        <div>
+            <div class="text-center mb-4">
+                <h3>{{movie?.title}}</h3>
+            </div>
+    
+            <div class="row mx-0 mt-3">
+                <div class="col-md-12 col-sm-12">
+                    <span>Date released: {{movie?.release_date | date: 'dd-MM-YYYY'}}</span>
+                    <br>
+                    <span>Languages: 
+                        <span *ngFor="let language of movie?.spoken_languages">
+                            {{language.english_name}} &nbsp;
+                        </span> 
+                    </span>
+                    <br>
+                    <span>Runtime: {{movie?.runtime}} min</span>
+                    <br>
+    
+                    <div class="mt-4 ml-3">
+                        <h6>
+                            Description
+                        </h6>
+    
+                        <p>
+                            {{movie?.overview}}
+                        </p>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+
+        
+
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,31 @@
+.background {
+    background-image: url('../../assets/images/background1.jpg');
+    background-size: cover;
+    height: 1400px;
+}
+
+.div-films--position {
+    position: relative;
+    left: 650px;
+    top: 230px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.background-color-content {
+    background-color: #ffffffd1;
+}
+
+.content-font--size {
+    font-size: larger;
+    font-weight: 600;
+}

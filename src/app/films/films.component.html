@@ -1,0 +1,17 @@
+<div class="w-100 background p-5">
+
+    <div class="p-3 d-flex justify-content-center">
+        <input type="text" class="form-control background-color-content content-font--size w-50" placeholder="Search" (keyup)="searchMovie($event)">
+    </div>
+
+
+    <div class="row mx-0 my-5">
+        <div class="col-md-6 col-sm-12 mr-4" *ngFor="let movie of movies">
+            <div class="background-color-content content-font--size p-3 mb-5 rounded w-75 cursor" routerLink="/detail-film/{{movie.id}}">
+                <div>
+                    {{movie.title}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
