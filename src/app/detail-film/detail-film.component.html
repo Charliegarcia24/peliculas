@@ -6,20 +6,20 @@
 
         <div>
             <div class="text-center mb-4">
-                <h3>{{movie?.title}}</h3>
+                <h3>{{movie.title}}</h3>
             </div>
     
             <div class="row mx-0 mt-3">
                 <div class="col-md-12 col-sm-12">
-                    <span>Date released: {{movie?.release_date | date: 'dd-MM-YYYY'}}</span>
+                    <span>Date released: {{movie.release_date | date: 'dd-MM-YYYY'}}</span>
                     <br>
                     <span>Languages: 
-                        <span *ngFor="let language of movie?.spoken_languages">
+                        <span *ngFor="let language of movie.spoken_languages">
                             {{language.english_name}} &nbsp;
                         </span> 
                     </span>
                     <br>
-                    <span>Runtime: {{movie?.runtime}} min</span>
+                    <span>Runtime: {{movie.runtime}} min</span>
                     <br>
     
                     <div class="mt-4 ml-3">
@@ -28,7 +28,7 @@
                         </h6>
     
                         <p>
-                            {{movie?.overview}}
+                            {{movie.overview}}
                         </p>
                     </div>
     

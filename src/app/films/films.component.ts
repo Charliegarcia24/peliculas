@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
+import { Data } from '../models/data.model';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class FilmsComponent implements OnInit {
 
-  public movies: any[] = [];
+  public movies: Data = {};
 
   constructor(
     private dataService: DataService
@@ -17,8 +18,8 @@ export class FilmsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getData().pipe(
-      tap((data) => {
-        this.movies = data.results;
+      tap((data: Data) => {
+        this.movies.results = data.results;
       })
     ).subscribe();
   }
@@ -28,14 +29,14 @@ export class FilmsComponent implements OnInit {
 
     if (movie_name.target.value !== '') {
       this.dataService.searchMovie(movie_name.target.value).pipe(
-        tap((data) => {
-          this.movies = data.results;
+        tap((data: Data) => {
+          this.movies.results = data.results;
         })
       ).subscribe();
     } else {
       this.dataService.getData().pipe(
-        tap((data) => {
-          this.movies = data.results;
+        tap((data: Data) => {
+          this.movies.results = data.results;
         })
       ).subscribe();
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
+import { Movie } from '../models/movie.model';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { DataService } from '../services/data.service';
 export class DetailFilmComponent implements OnInit {
 
   private movie_id: number = 0;
-  public movie: any = null;
+  public movie: Movie = {};
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,7 +23,7 @@ export class DetailFilmComponent implements OnInit {
     this.movie_id = this.activatedRoute.snapshot.params['id'];
 
     this.dataService.getMovie(this.movie_id).pipe(
-      tap((data) => {
+      tap((data: Movie) => {
         this.movie = data;
       })
     ).subscribe();
